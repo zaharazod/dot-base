@@ -50,9 +50,11 @@ if ! shopt -oq posix; then
 fi
 
 optsrc "$HOME/.prompt.sh"
-
 optsrc $HOME/.bash_profile.local
 
+
+##########
+which vcsh && echo "Updating vcsh repositories.." && vcsh pull
 ##########
 fortune -s
 ##########
