@@ -19,6 +19,8 @@ COL_HOST="${NORMAL}${BOLD}${BLACK}${BLUEBG}"
 COL_FADE2="${NORMAL}${CYAN}"
 COL_BULLET="${BOLD}${DIM}${CYAN}"
 
+optsrc "$HOME/.hosts.sh"
+
 function prompt_pre() {
   unset GIT
   declare -A GIT
