@@ -54,7 +54,7 @@ optsrc $HOME/.bash_profile.local
 
 
 ##########
-which vcsh && echo "Updating vcsh repositories.." && vcsh pull
+which vcsh > /dev/null && echo "Updating vcsh repositories.." && vcsh pull
 ##########
 fortune -s
 ##########
