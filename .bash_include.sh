@@ -2,6 +2,7 @@ X=`realpath "${BASH_SOURCE[0]}"` X=`dirname "$X"` X=`realpath "$X/../.."` DOT_RO
 export DOT_ROOT
 export DOT_HOST=`hostname -s`
 export DOT_USER=`whoami`
+export TASKDDATA="/var/lib/tasjd"
 
 function optsrc() {
   while [ -n "$1" ]; do
