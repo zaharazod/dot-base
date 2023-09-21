@@ -50,8 +50,8 @@ if ! shopt -oq posix; then
 fi
 
 optsrc "$HOME/.prompt.sh"
-optsrc $HOME/.bash_profile.local
-
+optsrc "$HOME/.bash_profile.private"
+optsrc "$HOME/.bash_profile.local"
 
 ##########
 which vcsh > /dev/null && \
