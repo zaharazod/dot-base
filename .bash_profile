@@ -49,6 +49,7 @@ if ! shopt -oq posix; then
   optsrc /opt/homebrew/etc/bash_completion
 fi
 
+optsrc "$HOME/.bash_functions"
 optsrc "$HOME/.prompt.sh"
 optsrc "$HOME/.bash_profile.private"
 optsrc "$HOME/.bash_profile.local"
