@@ -1,6 +1,8 @@
 # preference/version-lock
 which python3  >/dev/null  && alias python=python3
 
+# django dev
+alias mbmewatch='inotifywait --csv --recursive --monitor --event modify --include .*\.py\$ --include ".*\.(html|py)\$" /home/matt/hack/mbme/ | while read change; do echo \"$? $change\"; touch /srv/mattbarry.me/mbme/mbme/wsgi.py ; done'
 # speling
 which vi >/dev/null        && alias bu=vi && alias bi=vi
 which git >/dev/null       && alias got=git && alias gut=git
