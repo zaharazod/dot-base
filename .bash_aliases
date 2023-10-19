@@ -2,7 +2,7 @@
 which python3  >/dev/null  && alias python=python3
 
 # django dev
-alias mbmewatch='inotifywait --csv --recursive --monitor --event modify --include .*\.py\$ --include ".*\.(html|py)\$" /srv/mattbarry.me/mbme/ | while read change; do echo \"$? $change\"; sleep 2; touch /srv/mattbarry.me/mbme/mbme/wsgi.py ; done'
+alias mbmewatch='inotifywait --csv --recursive --monitor --event modify --include ".*\.(html|py)\$" /srv/mattbarry.me/mbme/ | while read change; do echo \"$? $change\"; sleep 2; touch /srv/mattbarry.me/mbme/mbme/wsgi.py ; done'
 
 # python #
 alias testpypi='[ -d dist ] && rm -f dist/* && python -m build && twine upload --repository testpypi dist/*'

@@ -1,7 +1,3 @@
-X=`realpath "${BASH_SOURCE[0]}"` X=`dirname "$X"` X=`realpath "$X/../.."` DOT_ROOT=$X
-export DOT_ROOT
-export DOT_HOST=`hostname -s`
-export DOT_USER=`whoami`
 export TASKDDATA="/var/lib/taskd"
 
 function optsrc() {
