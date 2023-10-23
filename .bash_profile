@@ -55,15 +55,16 @@ optsrc "$HOME/.bash_profile.private"
 optsrc "$HOME/.bash_profile.local"
 optsrc "$HOME/.bash_completion"
 
+let TIMEOUT=4
 ################
 ssh-agent-check
 # conditional?
 which vcsh > /dev/null && \
   echo "Updating vcsh repositories.." && \
-  timeout 4 vcsh pull
+  timeout -s 9 $TIMEOUT vcsh pull
 which task > /dev/null && \
   echo "Synchronizing taskwarrior tasks.." && \
-  timeout 4 task sync
+  timeout -s 9 $TIMEOUT task sync
 
 fortune -s
 ################
