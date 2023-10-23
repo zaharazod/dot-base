@@ -53,14 +53,17 @@ optsrc "$HOME/.bash_functions"
 optsrc "$HOME/.prompt.sh"
 optsrc "$HOME/.bash_profile.private"
 optsrc "$HOME/.bash_profile.local"
+optsrc "$HOME/.bash_completion"
 
-##########
+################
+ssh-agent-check
+# conditional?
 which vcsh > /dev/null && \
   echo "Updating vcsh repositories.." && \
-  vcsh pull
+  timeout 4 vcsh pull
 which task > /dev/null && \
   echo "Synchronizing taskwarrior tasks.." && \
-  task sync
-##########
+  timeout 4 task sync
+
 fortune -s
-##########
+################
