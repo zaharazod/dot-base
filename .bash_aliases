@@ -1,5 +1,5 @@
 # preference/version-lock
-which python3  >/dev/null  && alias python=python3
+which python3 >/dev/null && alias python=python3
 
 # django dev
 alias mbmewatch='inotifywait --csv --recursive --monitor --event modify --include ".*\.(html|py)\$" /srv/mattbarry.me/mbme/ | while read change; do echo \"$? $change\"; sleep 2; touch /srv/mattbarry.me/mbme/awa/wsgi.py ; done'
