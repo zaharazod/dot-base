@@ -7,6 +7,11 @@ esac
 source "$HOME/.profile"
 source "$HOME/.bashrc"
 
+###### fnord #############
+optsrc ~/.prompt.sh
+optsrc ~/.bash_profile.private
+optsrc ~/.bash_profile.local
+
 let TIMEOUT=4
 ################
 ssh-agent-check

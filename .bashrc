@@ -1,9 +1,6 @@
 source ~/.bash_include.sh
 optsrc ~/.bash_aliases
 optsrc ~/.bash_functions
-optsrc ~/.prompt.sh
-optsrc ~/.bash_profile.private
-optsrc ~/.bash_profile.local
 
 for ROOT in /opt /opt/* /usr/local ~/.local ~/bin; do
   optpath "$ROOT/bin"
