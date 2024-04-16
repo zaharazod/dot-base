@@ -1,0 +1,25 @@
+# A simple example config file for the mr(1) command.
+
+[hack/mr]
+checkout = git clone git://git.kitenet.net/mr
+
+[hack/dot/dot-base]
+checkout = git clone 'git@github.com:zaharazod/dot-base.git' 'dot-base'
+
+[hack/dot/dot-private]
+checkout = git clone 'git@github.com:zaharazod/dot-private.git' 'dot-private'
+
+[hack/awa]
+checkout = git clone 'git@github.com:hazelmollusk/awa.git' 'awa'
+
+[hack/control]
+checkout = git clone 'git@github.com:hazelmollusk/datta.git' 'control'
+
+[hack/www]
+checkout = git clone 'git@github.com:hazelmollusk/www.git' 'www'
+
+[hack/django]
+checkout = git clone 'git@github.com:django/django.git' 'django'
+
+[hack/django-quill-editor]
+checkout = git clone 'git@github.com:zaharazod/django-quill-editor.git' 'django-quill-editor'

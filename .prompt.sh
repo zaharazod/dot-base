@@ -1,4 +1,6 @@
 source "$HOME/.colors.sh"
+# put a basic xterm title up
+printf "\033]0;%s\007" "`whoami`@`hostname -s`"
 
 DIRCOLOR="$BLACK$BG2"
 PIPECOLOR="$NORMAL\[\033[02;${PCOLOR}m\]"
