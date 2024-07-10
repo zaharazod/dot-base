@@ -44,4 +44,4 @@ alias gu="git pull"
 alias gcp="git commit -am '$*' && git push"
 
 # debian
-alias up="sudo apt update && sudo apt full-upgrade -y"
+alias up="sudo apt --update full-upgrade -y"
