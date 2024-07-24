@@ -1,4 +1,5 @@
 source "$HOME/.colors.sh"
+source "$HOME/.bash_include.sh"
 # put a basic xterm title up
 printf "\033]0;%s\007" "`whoami`@`hostname -s`"
 
@@ -26,8 +27,9 @@ optsrc "$HOME/.hosts.sh"
 function prompt_pre() {
   which deactivate >/dev/null 2>&1 && deactivate
   BASE=$(basename $PWD)
+  
   for j in env venv; do
-    for i in "$PWD/.$j" "$HOME/.$j/$BASE"; do
+    for i in "$HOME/.$j" "$PWD/.$j" "$HOME/.$j/$BASE"; do
       optsrc "$i/bin/activate"
     done
   done
