@@ -44,5 +44,5 @@ alias gu="git pull"
 alias gcp="git commit -am '$*' && git push"
 
 # debian
-alias up="sudo apt --update full-upgrade --install-suggests --install-recommends --auto-remove --force-yes -y"
+alias up="sudo apt --update full-upgrade --install-suggests --install-recommends --auto-remove -y"
 
