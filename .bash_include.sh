@@ -9,7 +9,7 @@ function optsrc() {
 
 function optpath() {
   while [ -n "$1" ]; do
-    [ -d "$1" ] && PATH="$1:$PATH"
+    [ -d "$1" ] && export PATH="$1:$PATH"
     shift
   done
 }

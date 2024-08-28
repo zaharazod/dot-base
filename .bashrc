@@ -2,7 +2,7 @@ source ~/.bash_include.sh
 optsrc ~/.bash_aliases
 optsrc ~/.bash_functions
 
-for ROOT in /opt /opt/* /usr/local ~/.local ~/bin; do
+for ROOT in /opt /opt/* /usr/local ~/.local ~/bin ~/hack/*; do
   optpath "$ROOT/bin"
 done
 
