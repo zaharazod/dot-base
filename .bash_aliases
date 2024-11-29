@@ -8,6 +8,10 @@ alias mbme='pushd /srv/mattbarry.me/mbme && ./manage.py shell && popd'
 # python #
 alias testpypi='[ -d dist ] && rm -f dist/* && python -m build && twine upload --repository testpypi dist/*'
 alias pypi='[ -d dist ] && rm -f dist/* && python -m build && twine upload --repository pypi dist/*'
+alias tf='terraform'
+alias tfi='tf init'
+alias tfp='tf plan'
+alias tfa='tf apply'
 
 
 # speling
