@@ -40,13 +40,14 @@ function prompt_pre() {
   if [[ ! $GIT_STATUS =~ fatal ]]; then
     GIT[NAME]=$(git config --get remote.origin.url | sed -e 's/^.*\/\([^/.]*\).*/\1/' 2>&1)
     GIT[BRANCH]=$(git branch --show-current 2>&1)
-    if [[ $GIT_STATUS =~ behind ]]; then GIT[BEHIND]="«"; fi
-    if [[ $GIT_STATUS =~ ahead ]]; then GIT[AHEAD]="»"; fi
+    if [[ $GIT_STATUS =~ behind ]]; then GIT[BEHIND]="⏪"; fi
+    if [[ $GIT_STATUS =~ ahead ]]; then GIT[AHEAD]="⏩"; fi
     if [[ $GIT_STATUS =~ \?\? ]]; then GIT[UNTRACKED]="❓"; fi
-    if [[ $GIT_STATUS =~ \ M\  ]]; then GIT[MODIFIED]="༗"; fi
+    if [[ $GIT_STATUS =~ \ M\  ]]; then GIT[MODIFIED]="╋"; fi
   fi
   DDATE=$(ddate +%A 2>/dev/null || date +%A 2>/dev/null)
-  TIME=$(date +%I%M)
+  TIME=$(date +%I᎓%M)
+  TIME="⌛${TIME}"
   DISPLAY_PATH=$(
     p="${PWD#${HOME}}"
     [ "${PWD}" != "${p}" ] && printf "~"
@@ -54,14 +55,14 @@ function prompt_pre() {
     for q in ${p:1}; do printf /${q:0:1}; done
     printf "${q:1}"
   )
-  PS1="\033]0;$USER@$HOST: ${DISPLAY_PATH} | ${GIT[ORIGIN]} ${GIT[BRANCH]:+(${GIT[BRANCH]})} ${GIT[UNTRACKED]:+\?}${GIT[MODIFIED]:+*}\007\
-${COL_BUMP}▄\
+  PS1="\033]0;☯ $USER@$HOST: ${DISPLAY_PATH} | ${GIT[ORIGIN]} ${GIT[BRANCH]:+(${GIT[BRANCH]})} ${GIT[UNTRACKED]:+\?}${GIT[MODIFIED]:+*}\007\
+${COL_BUMP}╒╡\
 ${COL_DATE}\
-$SPACE2$DDATE${SPACE}${COL_BAR}│$SPACE${COL_TIME}$TIME$SPACE2${COL_FADE1}▒░\
+${SPACE}♓$DDATE${SPACE}${COL_BAR}│$SPACE${COL_TIME}$TIME$SPACE2${COL_FADE1}▒░\
 ${debian_chroot:+($debian_chroot) }\
 ${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }\
-${COL_USER}\
-$SPACE\u\
+${WHITE}☯ ${COL_USER}\
+\u▚\
 ${COL_HOST}\
 \h$SPACE${NORMAL}${CYAN}▒░\
 $NORMAL$SPACE${GIT[NAME]}${COL_BULLET} ■ $NORMAL$BOLD$WHITE${GIT[BRANCH]}\
@@ -70,7 +71,7 @@ $SPACE$BOLD$YELLOW${GIT[MODIFIED]}\
 $BOLD$RED${GIT[UNTRACKED]}\
 $BOLD$DIM$GREEN${GIT[AHEAD]}\
 
-${COL_BUMP}▀$NORMAL ${DISPLAY_PATH} \
+${COL_BUMP}╛$NORMAL ${DISPLAY_PATH} \
 $NORMAL$BOLD\$$NORMAL "
 
   cols=$(tput cols)
