@@ -1,7 +1,7 @@
 source "$HOME/.colors.sh"
 source "$HOME/.bash_include.sh"
 # put a basic xterm title up
-printf "\033]0;%s\007" "`whoami`@`hostname -s`"
+printf "\033]0;%s\007" "$(whoami)@$(hostname -s)"
 
 DIRCOLOR="$BLACK$BG2"
 PIPECOLOR="$NORMAL\[\033[02;${PCOLOR}m\]"
@@ -27,7 +27,7 @@ optsrc "$HOME/.hosts.sh"
 function prompt_pre() {
   which deactivate >/dev/null 2>&1 && deactivate
   BASE=$(basename $PWD)
-  
+
   for j in env venv; do
     for i in "$HOME/.$j" "$PWD/.$j" "$HOME/.$j/$BASE"; do
       optsrc "$i/bin/activate"
@@ -42,8 +42,8 @@ function prompt_pre() {
     GIT[BRANCH]=$(git branch --show-current 2>&1)
     if [[ $GIT_STATUS =~ behind ]]; then GIT[BEHIND]="«"; fi
     if [[ $GIT_STATUS =~ ahead ]]; then GIT[AHEAD]="»"; fi
-    if [[ $GIT_STATUS =~ \?\? ]]; then GIT[UNTRACKED]="?"; fi
-    if [[ $GIT_STATUS =~ \ M\  ]]; then GIT[MODIFIED]="¤"; fi
+    if [[ $GIT_STATUS =~ \?\? ]]; then GIT[UNTRACKED]="❓"; fi
+    if [[ $GIT_STATUS =~ \ M\  ]]; then GIT[MODIFIED]="༗"; fi
   fi
   DDATE=$(ddate +%A 2>/dev/null || date +%A 2>/dev/null)
   TIME=$(date +%I%M)
