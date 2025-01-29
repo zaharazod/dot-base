@@ -62,7 +62,7 @@ ${SPACE}♓$DDATE${SPACE}${COL_BAR}│$SPACE${COL_TIME}$TIME$SPACE2${COL_FADE1}�
 ${debian_chroot:+($debian_chroot) }\
 ${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }\
 ${WHITE}☯ ${COL_USER}\
-\u▚\
+\u\
 ${COL_HOST}\
 \h$SPACE${NORMAL}${CYAN}▒░\
 $NORMAL$SPACE${GIT[NAME]}${COL_BULLET} ■ $NORMAL$BOLD$WHITE${GIT[BRANCH]}\
