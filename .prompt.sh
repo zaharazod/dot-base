@@ -26,7 +26,7 @@ optsrc "$HOME/.hosts.sh"
 
 function prompt_pre() {
   which deactivate >/dev/null 2>&1 && deactivate
-  BASE=$(basename $PWD)
+  BASE=$(basename "$PWD")
 
   for j in env venv; do
     for i in "$HOME/.$j" "$PWD/.$j" "$HOME/.$j/$BASE"; do
@@ -60,7 +60,7 @@ ${COL_BUMP}╒╡\
 ${COL_DATE}\
 ${SPACE}♓$DDATE${SPACE}${COL_BAR}│$SPACE${COL_TIME}$TIME$SPACE2${COL_FADE1}▒░\
 ${debian_chroot:+($debian_chroot) }\
-${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }\
+${VIRTUAL_ENV:+($(basename "$VIRTUAL_ENV")) }\
 ${WHITE}☯ ${COL_USER}\
 \u \
 ${COL_HOST}\
