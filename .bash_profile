@@ -25,3 +25,4 @@ which task > /dev/null && \
 
 fortune -s
 ################
+export EDITOR=vi

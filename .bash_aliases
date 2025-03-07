@@ -52,3 +52,5 @@ if [ -x /usr/bin/dircolors ]; then
     alias ip='ip -color=auto'
 fi
 
+alias db='gbp buildpackage --git-ignore-new --git-ignore-branch'
+alias dt='TMPDIR=/var/tmp debian/rules clean && autopkgtest . -- unshare --release=unstable 2>&1'
